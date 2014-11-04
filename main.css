@@ -13,12 +13,21 @@
     margin: auto;
 }
 
-#status{
+.status-correct{
 
     color: lightgreen;
     font-weight:bold;
     font-size: 1.5em;
     font-family: Orbitron;
+}
+
+.status-incorrect{
+
+    color: red;
+    font-weight:bold;
+    font-size: 1.5em;
+    font-family: Orbitron;
+
 }
 
 #main{
@@ -27,14 +36,7 @@
     margin: 0 auto;
 }
 
-.ui-dialog{
-    background-color: #3300FF;
-    border-radius: 10px;
-    opacity:0.9;
-    border: 2px solid black;
-}
-
-.correct-input{
+.input-correct{
 
     border: 3px solid green;
     border-radius: 3px;
@@ -42,7 +44,7 @@
 
 }
 
-.incorrect-input{
+.input-incorrect{
 
     border: 5px solid red;
     border-radius: 3px;
@@ -79,7 +81,6 @@ img{
 .container{
     text-align: center;
 }
-
 
 
 footer{

@@ -49,7 +49,6 @@ Lesson.prototype.validateAnswer = function (answer, index) {
 
     if (answer.toLowerCase() == this.pokemon[index].name.toLowerCase())
         return true;
-
     else
         return false;
 

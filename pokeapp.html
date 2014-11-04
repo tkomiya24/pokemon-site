@@ -1,0 +1,52 @@
+﻿<!doctype html>
+
+<html data-ng-app="pokeApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body style="padding-top:71px">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">PokeLearner</a>
+            </div>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/learn">Learn</a></li>
+                    <li><a href="#/test">Test</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div data-ng-view>
+
+    </div>
+
+    <footer>Made by Takeru. Images taken from <a href="http://pokemondb.net/">pokemondb.net</a> !! Check them out!</footer>
+
+    <!--External scripts!-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.26/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.26/angular-animate.min.js"></script>
+    
+    <!--My scripts for angularjs-->
+    <script src="app.js"></script>   
+    <script src="Generator.js"></script>
+    <script src="controllers/TestController.js"></script>
+    <script src="Lesson.js"></script>
+    <script src="controllers/LessonController.js"></script>
+</body>
+</html>
