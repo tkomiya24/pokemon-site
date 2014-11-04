@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <title>Become a Pokemon Master!!</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    </head>
+    <body style="padding-top:100px">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">PokeLearner</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="learn.html">Learn</a></li>
+                        <li class="active"><a href="test.html">Test</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="main" class="container">
+            <h3>Do you know these pokemon?</h3>
+            <div id="streakTracker">
+            </div>
+
+            <div class="button-toolbar">
+                <label>Limit to: </label><br />
+                <button class="btn btn-default" onclick="switchGen(0)">All Gen</button>
+                <button onclick="switchGen(1)" class="btn btn-default">Gen I</button>
+                <button onclick="switchGen(2)" class="btn btn-default">Gen II</button>
+                <button onclick="switchGen(3)" class="btn btn-default">Gen III</button>
+                <button onclick="switchGen(4)" class=" btn btn-default">Gen IV</button>
+                <button onclick="switchGen(5)" class="btn btn-default">Gen V</button>
+                <button onclick="switchGen(6)" class="btn btn-default">Gen VI</button><br />
+            </div>
+            <div>
+                <h1 id="answer" style="display:none"></h1>
+                <div class="img-container">
+                    <img src="" id="question" />
+                </div><br />
+                <input type="text" value="" id="nameAnswer" /><br />
+                <div id="status"></div>
+                <div class="button-toolbar">
+                    <button id="submit-button" class="btn btn-success" onclick="validateAnswer(false)">Submit</button>
+                    <button id="give-up-button" class="btn btn-danger" onclick="validateAnswer(true)">Give up</button>
+                    <button id="try-again-button" class="btn btn-primary" onclick="reset()" style="display:none">Try again!</button>
+                </div>
+                <!--<input type="text" value="Enter type here." />-->
+            </div>
+            
+        </div>
+
+        <footer>Made by Takeru</footer>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="Generator.js"></script>
+        <!--<script src="pokemon.js"></script>-->
+        <script src="test.js"></script>
+    </body>
+</html>

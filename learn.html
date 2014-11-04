@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>Learn New Pokemon!</title>
+        
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body style="padding-top:100px">
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">PokeLearner</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="learn.html">Learn</a></li>
+                        <li><a href="test.html">Test</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="button-toolbar">
+                <button class="btn btn-default" onclick="genSelectButtonHandler(0)">All Gen</button>
+                <button class="btn btn-default" onclick="genSelectButtonHandler(1)">Gen I</button>
+                <button class="btn btn-default" onclick="genSelectButtonHandler(2)">Gen II</button>
+                <button class="btn btn-default" onclick="genSelectButtonHandler(3)">Gen III</button>
+                <button class="btn btn-default" onclick="genSelectButtonHandler(4)">Gen IV</button>
+                <button class="btn btn-default" onclick="genSelectButtonHandler(5)">Gen V</button>
+                <button class="btn btn-default" onclick="genSelectButtonHandler(6)">Gen VI</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="learning-div" class="container">
+                <label id="label"></label><br />
+                <div class="img-container">
+                    <img id="pic" class="img-responsive" src="" />
+                </div>
+                <br />
+                <button id="next" class="btn btn-info btn-lg" onclick="nextPokemon()">Next Pokemon!</button>
+            </div>
+
+            <div id="questions-div" class="container">
+                <div class="row" id="questions">
+
+                </div>
+                <button id="next-lesson-button" class="btn btn-success btn-lg" style="display:none" onclick="nextLesson()">Next Lesson</button>
+                <button id="give-up-button" class="btn btn-danger btn-lg" style="display:none" onclick="submitAnswer()">Give up</button>
+            </div>
+        </div>
+        <footer class="container-fluid"><p>Made by Takeru</p></footer>
+
+        <!-- scripts are at the bottom here-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  
+        <script src="Generator.js"></script>
+        <!--<script src="pokemon.js"></script>-->
+        <script src="Lesson.js"></script>
+        <script src="learn.js"></script>
+
+    </body>
+</html>

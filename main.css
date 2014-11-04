@@ -1,0 +1,90 @@
+
+#streakTracker{
+    background-color:black;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align:center;
+    font-size:3em;
+    background-color:black;
+    color:white;
+    text-align:center;
+    margin: auto;
+}
+
+#status{
+
+    color: lightgreen;
+    font-weight:bold;
+    font-size: 1.5em;
+    font-family: Orbitron;
+}
+
+#main{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.ui-dialog{
+    background-color: #3300FF;
+    border-radius: 10px;
+    opacity:0.9;
+    border: 2px solid black;
+}
+
+.correct-input{
+
+    border: 3px solid green;
+    border-radius: 3px;
+    background-color: lightgreen;
+
+}
+
+.incorrect-input{
+
+    border: 5px solid red;
+    border-radius: 3px;
+    background-color: lightsalmon;
+}
+
+#next-test-button{
+
+    display: none;
+}
+
+div.img-container{
+
+    width: 250px;
+    height: 250px;
+    margin: auto;
+}
+
+div.test-img-container{
+
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+img{
+
+    max-width:100%;
+    max-height:100%;
+    margin: auto;
+    display: block;
+}
+
+.container{
+    text-align: center;
+}
+
+
+
+footer{
+
+    text-align: center;
+    margin: auto;
+
+}

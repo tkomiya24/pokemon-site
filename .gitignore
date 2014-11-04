@@ -1,0 +1,7 @@
+.DS_STORE
+*.img
+*.png
+sql
+libs
+img
+seed.txt
