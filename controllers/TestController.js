@@ -20,6 +20,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 	        $scope.streak++;
 	        alreadyAsked[$scope.currentPokemon.name] = true;
 	        updateScore();
+	        animateStatus();
 	        $scope.currentPokemon = getNextPokemon(gen);
 	        $scope.inputAnswer = '';
 
@@ -27,12 +28,9 @@ angular.module("pokeApp").controller("testController", function($scope){
 	    else {
 	        
 	        $scope.correct = false;
-	        // var status = $('#status');
-	        // var answer = $('#answer');
+	        animateStatus();
 	        // input.animate({ fontSize: '1.5em', opacity: '0.3' }, 'medium');
-	        // input.attr('class', 'incorrect-input');
 	        // input.animate({ fontSize: '1em', opacity: '1' }, 'medium');
-	        // answer.fadeIn(600);
 	        // alreadyAsked = new Array();
 	    }
 	};
@@ -103,6 +101,12 @@ angular.module("pokeApp").controller("testController", function($scope){
 
 	};
 
+	function animateStatus(){
+
+		var status = $("#status");
+		status.animate({fontSize: '2.5em', opacity:'0.5'}, 'medium');
+		status.animate({fontSize: '1.9em', opacity:'1'}, 'medium');
+	}
 
 	function updateScore() {
 
