@@ -19,7 +19,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 
 	        $scope.streak++;
 	        alreadyAsked[$scope.currentPokemon.name] = true;
-	        updateScore();
+	        animateStreakDiv();
 	        animateStatus();
 	        $scope.currentPokemon = getNextPokemon(gen);
 	        $scope.inputAnswer = '';
@@ -108,7 +108,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 		status.animate({fontSize: '1.9em', opacity:'1'}, 'medium');
 	}
 
-	function updateScore() {
+	function animateStreakDiv() {
 
 	    var div = $("#streakTracker");
 	    div.animate({ fontSize: '4em', opacity: '0.3' }, 'medium');
@@ -119,7 +119,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 	function resetScore() {
 
 	        $scope.streak = 0;     
-	        updateScore();
+	        animateStreakDiv();
 	}
 
 });
