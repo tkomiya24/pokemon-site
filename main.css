@@ -91,7 +91,7 @@ footer{
 }
 /*###########   Styles for answer header   ###########*/
 #answer.ng-hide-remove,#answer.ng-hide-remove-active {
-    transition: 0.6s linear;
+    transition: 0.4s linear;
 }
 
 #answer.ng-hide{
