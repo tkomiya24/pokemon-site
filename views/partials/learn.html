@@ -12,7 +12,7 @@
     </div>
 
     <div class="container">
-        <div id="learning-div" class="container">
+        <div id="learning-div" class="container" ng-hide="testStarted">
             <label id="label">This is {{currentPokemon.name}}</label><br />
             <div class="img-container">
                 <img id="pic" class="img-responsive" ng-src="{{currentPokemon.imgUrl}}" />
@@ -22,7 +22,7 @@
             <button id="start-text" class="btn btn-success btn-lg" ng-click="startTest()" ng-show="lesson.finished">Start the test!</button>
         </div>
 
-        <div id="questions-div" class="container">
+        <div id="questions-div" class="container" ng-show="testStarted">
             <div class="row" id="questions">
                 <div ng-repeat="pokemon in lesson.pokemon" class="col-xs-{{12/lesson.pokemon.length}}">
                         <div class="img-container">
