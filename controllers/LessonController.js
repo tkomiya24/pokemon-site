@@ -8,7 +8,6 @@ angular.module("pokeApp").constant("lessonLength", 3).controller("lessonControll
     for(var i =0; i < lesson.length; i++){
     	correct.push(null);
     }
-    $('#questions-div').hide();
     //scope variables
     $scope.lesson = lesson;
     $scope.inputAnswers = new Array();
@@ -25,9 +24,7 @@ angular.module("pokeApp").constant("lessonLength", 3).controller("lessonControll
 
 	$scope.startTest = function(){
 
-	    $("#learning-div").hide();
-    	$('#questions-div').show();
-    	$("#give-up-button").show();
+    	$scope.testStarted = true;
 
 	}
 	$scope.genSelectButtonHandler = function(gen) {
@@ -41,6 +38,7 @@ angular.module("pokeApp").constant("lessonLength", 3).controller("lessonControll
     
 	    lesson.nextLesson();
 	    $scope.nextPokemon();
+	    $scope.testStarted = false;
 	    resetUi();
 	}
 
@@ -116,12 +114,11 @@ angular.module("pokeApp").constant("lessonLength", 3).controller("lessonControll
 	function resetUi(){
 
 		$scope.finishedTest = false;
+		$scope.testStarted = false;
 		for(var i = 0; i < lesson.length; i++){
 			$scope.inputAnswers[i] = '';
 			correct[i] = null;
 		}
-		$('#questions-div').hide();
-		$('#learning-div').show();
 
 	}
 
