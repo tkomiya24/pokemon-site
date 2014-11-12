@@ -100,3 +100,30 @@ footer{
     padding: 0;
     margin: 0;
 }
+
+/*############ Styles for the question and answer divs in Lesson. */
+
+#questions-div.ng-hide-remove{
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+#questions-div.ng-hide{
+    opacity:0;
+    height:0;
+}
+
+#learning-div{
+
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+#learning-div.ng-hide{
+    opacity: 0;
+    height:0;
+}
