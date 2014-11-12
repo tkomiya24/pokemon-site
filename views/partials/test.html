@@ -16,7 +16,7 @@
         <button ng-click="switchGen(6)" class="btn btn-default" ng-class="selectedButtonClass(6)">Gen VI</button><br />
     </div>
     <div>
-        <h1 id="answer" ng-hide="correct">{{currentPokemon.name}}</h1>
+        <h1 id="answer" ng-hide="correct">{{correctAnswer}}</h1>
         <div class="img-container">
             <img ng-src="{{currentPokemon.imgUrl}}" id="question" />
         </div><br />

@@ -9,8 +9,8 @@ angular.module("pokeApp").controller("testController", function($scope){
 	$scope.inputAnswer = '';
 	$scope.streak = 0;
 	$scope.correct = true;
-	$scope.currentPokemon;
 	$scope.currentPokemon = getNextPokemon(gen);
+	$scope.correctAnswer = '';
 
 	//scope methods
 	$scope.validateAnswer = function(giveup) {
@@ -26,7 +26,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 
 	    }
 	    else {
-	        
+	        $scope.correctAnswer = $scope.currentPokemon.name;
 	        $scope.correct = false;
 	        animateStatus();
 	        // input.animate({ fontSize: '1.5em', opacity: '0.3' }, 'medium');
