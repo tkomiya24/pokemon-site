@@ -5,3 +5,5 @@ sql
 libs
 img
 seed.txt
+server.js
+node_modules
