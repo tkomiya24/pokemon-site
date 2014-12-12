@@ -1,6 +1,7 @@
 .DS_STORE
 *.img
 *.png
+*.log
 sql
 libs
 img
