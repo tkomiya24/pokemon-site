@@ -127,3 +127,10 @@ footer{
     opacity: 0;
     height:0;
 }
+
+.checkbox-div{
+
+    width: 45%;
+    margin:auto;
+    margin-bottom: 5px;
+}
