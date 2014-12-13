@@ -12,6 +12,11 @@ angular.module("pokeApp").controller("testController", function($scope){
 	$scope.currentPokemon = getNextPokemon(gen);
 	$scope.correctAnswer = '';
 	$scope.pokemonTypes = ["Normal","Fire","Fighting","Water","Flying","Grass","Poison","Electric","Ground","Psychic","Rock","Ice","Bug","Dragon","Ghost","Dark","Steel","Fairy"].sort();
+	$scope.typesSelected = new Array();
+
+	for(var i = 0; i < $scope.pokemonTypes.length; i++){
+		$scope.typesSelected[$scope.pokemonTypes[i]] = false;
+	}
 
 	//scope methods
 	$scope.validateAnswer = function(giveup) {
@@ -30,6 +35,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 	        $scope.correctAnswer = $scope.currentPokemon.name;
 	        $scope.correct = false;
 	        animateStatus();
+	        alert($scope.typesSelected["Fire"] + " has been selected");
 	        // input.animate({ fontSize: '1.5em', opacity: '0.3' }, 'medium');
 	        // input.animate({ fontSize: '1em', opacity: '1' }, 'medium');
 	        // alreadyAsked = new Array();
