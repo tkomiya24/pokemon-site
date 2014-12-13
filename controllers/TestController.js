@@ -11,6 +11,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 	$scope.correct = true;
 	$scope.currentPokemon = getNextPokemon(gen);
 	$scope.correctAnswer = '';
+	$scope.pokemonTypes = ["Normal","Fire","Fighting","Water","Flying","Grass","Poison","Electric","Ground","Psychic","Rock","Ice","Bug","Dragon","Ghost","Dark","Steel","Fairy"].sort();
 
 	//scope methods
 	$scope.validateAnswer = function(giveup) {
