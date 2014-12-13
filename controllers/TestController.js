@@ -15,13 +15,13 @@ angular.module("pokeApp").controller("testController", function($scope){
 	$scope.typesSelected = new Array();
 
 	for(var i = 0; i < $scope.pokemonTypes.length; i++){
-		$scope.typesSelected[$scope.pokemonTypes[i]] = false;
+		$scope.typesSelected[$scope.pokemonTypes[i].toLowerCase()] = false;
 	}
 
 	//scope methods
 	$scope.validateAnswer = function(giveup) {
 
-	    if (!giveup && $scope.currentPokemon.name.toLowerCase() == $scope.inputAnswer.toLowerCase()) {
+	    if (!giveup && $scope.currentPokemon.name.toLowerCase() == $scope.inputAnswer.toLowerCase() && validateTypes()) {
 
 	        $scope.streak++;
 	        alreadyAsked[$scope.currentPokemon.name] = true;
@@ -32,10 +32,10 @@ angular.module("pokeApp").controller("testController", function($scope){
 
 	    }
 	    else {
-	        $scope.correctAnswer = $scope.currentPokemon.name;
+	        $scope.correctAnswer = $scope.currentPokemon.name + " " + $scope.currentPokemon.types[0].name;
+	        $scope.correctAnswer = $scope.currentPokemon.types.length > 1 ? $scope.correctAnswer + " " + $scope.currentPokemon.types[1].name : $scope.correctAnswer;
 	        $scope.correct = false;
 	        animateStatus();
-	        alert($scope.typesSelected["Fire"] + " has been selected");
 	        // input.animate({ fontSize: '1.5em', opacity: '0.3' }, 'medium');
 	        // input.animate({ fontSize: '1em', opacity: '1' }, 'medium');
 	        // alreadyAsked = new Array();
@@ -127,6 +127,43 @@ angular.module("pokeApp").controller("testController", function($scope){
 
 	        $scope.streak = 0;     
 	        animateStreakDiv();
+	}
+
+	function validateTypes(){
+
+    	var curPokType1 = $scope.currentPokemon.types[0].name;
+    	
+    	if(!$scope.typesSelected[curPokType1]){
+    		return false;
+    	}
+
+    	if($scope.currentPokemon.types.length > 1){
+			
+			var curPokType2 = $scope.currentPokemon.types[1].name;
+    		if(!$scope.typesSelected[curPokType2]){
+    			return false;
+    		}
+    	}
+
+    	for(var i = 0; i < $scope.pokemonTypes.length; i++){
+
+    		var selected = $scope.typesSelected[$scope.pokemonTypes[i].toLowerCase()];
+    		if(selected){
+    			if($scope.pokemonTypes[i].toLowerCase() != $scope.currentPokemon.types[0].name){
+
+    				if($scope.currentPokemon.types.length > 1){
+
+    					if($scope.pokemonTypes[i].toLowerCase() != $scope.currentPokemon.types[1].name){
+    						return false;
+    					}
+    				}
+    				else{
+    					return false;
+    				}
+    			}
+    		}
+    	}
+    	return true;
 	}
 
 });

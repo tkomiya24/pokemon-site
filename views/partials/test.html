@@ -22,7 +22,7 @@
         </div><br />
         <input type="text" value="" id="nameAnswer" ng-model="inputAnswer" ng-keyup="$event.keyCode == 13 ? inputEnter(false) : null" ng-class="getInputClass()"/><br />
         <div class="checkbox-div">
-            <label ng-repeat="type in pokemonTypes" class="checkbox-inline"><input type="checkbox" ng-model="typesSelected[type]" value="">{{type}}</label>
+            <label ng-repeat="type in pokemonTypes" class="checkbox-inline"><input type="checkbox" ng-model="typesSelected[type.toLowerCase()]" value="">{{type}}</label>
         </div>
         <div id="status" ng-class = "getStatusClass()">{{getStatus()}}</div>
         <div class="button-toolbar">
