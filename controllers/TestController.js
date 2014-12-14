@@ -131,15 +131,16 @@ angular.module("pokeApp").controller("testController", function($scope){
 
 	function validateTypes(){
 
-    	var curPokType1 = $scope.currentPokemon.types[0].name;
+		var types = $scope.currentPokemon.types;
+    	var curPokType1 = types[0].name;
     	
     	if(!$scope.typesSelected[curPokType1]){
     		return false;
     	}
 
-    	if($scope.currentPokemon.types.length > 1){
+    	if(types.length > 1){
 			
-			var curPokType2 = $scope.currentPokemon.types[1].name;
+			var curPokType2 = types[1].name;
     		if(!$scope.typesSelected[curPokType2]){
     			return false;
     		}
@@ -149,11 +150,11 @@ angular.module("pokeApp").controller("testController", function($scope){
 
     		var selected = $scope.typesSelected[$scope.pokemonTypes[i].toLowerCase()];
     		if(selected){
-    			if($scope.pokemonTypes[i].toLowerCase() != $scope.currentPokemon.types[0].name){
+    			if($scope.pokemonTypes[i].toLowerCase() != types[0].name){
 
-    				if($scope.currentPokemon.types.length > 1){
+    				if(types.length > 1){
 
-    					if($scope.pokemonTypes[i].toLowerCase() != $scope.currentPokemon.types[1].name){
+    					if($scope.pokemonTypes[i].toLowerCase() != types[1].name){
     						return false;
     					}
     				}
