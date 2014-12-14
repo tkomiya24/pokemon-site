@@ -14,9 +14,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 	$scope.pokemonTypes = ["Normal","Fire","Fighting","Water","Flying","Grass","Poison","Electric","Ground","Psychic","Rock","Ice","Bug","Dragon","Ghost","Dark","Steel","Fairy"].sort();
 	$scope.typesSelected = new Array();
 
-	for(var i = 0; i < $scope.pokemonTypes.length; i++){
-		$scope.typesSelected[$scope.pokemonTypes[i].toLowerCase()] = false;
-	}
+	resetCheckboxes();
 
 	//scope methods
 	$scope.validateAnswer = function(giveup) {
@@ -29,6 +27,7 @@ angular.module("pokeApp").controller("testController", function($scope){
 	        animateStatus();
 	        $scope.currentPokemon = getNextPokemon(gen);
 	        $scope.inputAnswer = '';
+	        resetCheckboxes();
 
 	    }
 	    else {
@@ -125,8 +124,16 @@ angular.module("pokeApp").controller("testController", function($scope){
 
 	function resetScore() {
 
-	        $scope.streak = 0;     
-	        animateStreakDiv();
+        $scope.streak = 0;
+        resetCheckboxes();
+        animateStreakDiv();
+	}
+
+	function resetCheckboxes(){
+	    
+	    for(var i = 0; i < $scope.pokemonTypes.length; i++){
+			$scope.typesSelected[$scope.pokemonTypes[i].toLowerCase()] = false;
+		}  
 	}
 
 	function validateTypes(){
