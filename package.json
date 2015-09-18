@@ -1,0 +1,23 @@
+{
+  "name": "pokemon_site",
+  "version": "1.0.0",
+  "description": "A site to help you memorize the Pokemon",
+  "main": "pokeapp.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkomiya24/pokemon_site.git"
+  },
+  "author": "Takeru Komiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tkomiya24/pokemon_site/issues"
+  },
+  "homepage": "https://github.com/tkomiya24/pokemon_site#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
