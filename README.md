@@ -25,5 +25,5 @@ Dev-Ops
 
 ##5. Running 
 The command  
-``grunt server  
+`grunt server`  
 Will automatically launch the server and Google Chrome
