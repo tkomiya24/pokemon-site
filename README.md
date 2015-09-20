@@ -1,7 +1,7 @@
 # Learn the Pokemon!
 
 ##1. Purpose
-There's over 700 of these things now, and unless you want some punk 10 year old beating you in battle, you've got to study up. But you're old, hagrid, and dead on the inside, and your brain is not what it used to be, and you need an app that helps you. Together, we shall teach the shame and dishonor of defeat to your stupid little cousins and neighbours. At least until you finally get a girlfriend... But (because you're here...) we both know that's not going to happen. 
+There's over 700 of these things now, and unless you want some punk 10 year old beating you in battle, you've got to study up. But you're old, haggard, and dead on the inside, and your brain is not what it used to be, and you need an app that helps you. Together, we shall teach the shame and dishonor of defeat to your stupid little cousins and neighbours. At least until you finally get a girlfriend... But (because you're here...) we both know that's not going to happen. 
 
 ##2. Technologies
 
