@@ -1,0 +1,24 @@
+{
+  "name": "pokemon_site",
+  "description": "A site to help you memorize the Pokemon",
+  "main": "pokeapp.html",
+  "authors": [
+    "Takeru Komiya"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Pokemon",
+    "test",
+    "learn",
+    "names"
+  ],
+  "homepage": "https://github.com/tkomiya24/pokemon_site",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
