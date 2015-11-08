@@ -28,6 +28,7 @@ Dev-Ops
 ###4.1 Mac OSX
 
   1. Get XCode and the command line tools. Run them once and accept the ULA
+  2. Proceed to 4.2 for manual install or ```sh environmentSetup.sh``` for automatic setup
 
 ###4.2 All Platforms
 
