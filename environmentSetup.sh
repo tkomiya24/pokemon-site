@@ -29,6 +29,7 @@ installed=$?
 nvm list &> /dev/null
 if [[ $? -ne 0 ]] ; then
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+  source ~/.bash_profile
   nvm install
   nvm use
   if [[ $installed != 0 ]] ; then
