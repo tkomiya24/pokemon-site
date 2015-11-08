@@ -28,7 +28,8 @@ Dev-Ops
 ###4.1 Mac OSX
 
   1. Get XCode and the command line tools. Run them once and accept the ULA
-  2. Proceed to 4.2 for manual install or ```sh environmentSetup.sh``` for automatic setup
+  2. Proceed to 4.2 for manual install or ```sh environmentSetup.sh``` for automatic setup.
+     Automatic setup will install nvm and Node 0.12.7 as well as the other dependencies.
 
 ###4.2 All Platforms
 
