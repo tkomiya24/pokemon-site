@@ -28,8 +28,7 @@ which -s node
 installed=$?
 nvm list &> /dev/null
 if [[ $? -ne 0 ]] ; then
-  git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
-  echo '. ~/.nvm/nvm.sh' >> ~/.bash_profile
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
   source ~/.bash_profile
   nvm install
   nvm use
