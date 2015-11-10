@@ -4,7 +4,6 @@
 *.log
 sql
 libs
-img
 seed.txt
 node_modules
 bower_components
