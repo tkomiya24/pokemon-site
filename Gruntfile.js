@@ -15,7 +15,7 @@ module.exports = function(grunt) {
           base: '',
           open: {
             appName: 'Google Chrome',
-            target: 'http://localhost:8080/pokeapp.html'
+            target: 'http://localhost:8080/public/pokeapp.html'
           }
         }
       }
