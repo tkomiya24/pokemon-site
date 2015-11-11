@@ -1,33 +1,37 @@
-﻿<div id="main" class="container" ng-controller="testController">
-    <h3>Do you know these pokemon?</h3>
-    
-    <div id="streakTracker">
-        {{streak}}
-    </div>
+<div id="main" class="container" ng-controller="testController">
+  <h3>Do you know these pokemon?</h3>
 
+  <div id="streakTracker">
+    {{streak}}
+  </div>
+
+  <div class="button-toolbar">
+    <label>Limit to: </label>
+    <br />
+    <button ng-click="switchGen(0)" class="btn btn-default" ng-class="selectedButtonClass(0)">All Gen</button>
+    <button ng-click="switchGen(1)" class="btn btn-default" ng-class="selectedButtonClass(1)">Gen I</button>
+    <button ng-click="switchGen(2)" class="btn btn-default" ng-class="selectedButtonClass(2)">Gen II</button>
+    <button ng-click="switchGen(3)" class="btn btn-default" ng-class="selectedButtonClass(3)">Gen III</button>
+    <button ng-click="switchGen(4)" class="btn btn-default" ng-class="selectedButtonClass(4)">Gen IV</button>
+    <button ng-click="switchGen(5)" class="btn btn-default" ng-class="selectedButtonClass(5)">Gen V</button>
+    <button ng-click="switchGen(6)" class="btn btn-default" ng-class="selectedButtonClass(6)">Gen VI</button>
+    <br />
+  </div>
+  <div>
+    <h1 id="answer" ng-hide="correct">{{correctAnswer}}</h1>
+    <div class="img-container">
+      <img ng-src="{{currentPokemon.imgUrl}}" id="question" />
+    </div>
+    <br />
+    <input type="text" value="" id="nameAnswer" ng-model="inputAnswer" ng-keyup="$event.keyCode == 13 ? inputEnter(false) : null" ng-class="getInputClass()" />
+    <br />
+    <div id="status" ng-class="getStatusClass()">{{getStatus()}}</div>
     <div class="button-toolbar">
-        <label>Limit to: </label><br />
-        <button ng-click="switchGen(0)" class="btn btn-default" ng-class="selectedButtonClass(0)">All Gen</button>
-        <button ng-click="switchGen(1)" class="btn btn-default" ng-class="selectedButtonClass(1)">Gen I</button>
-        <button ng-click="switchGen(2)" class="btn btn-default" ng-class="selectedButtonClass(2)">Gen II</button>
-        <button ng-click="switchGen(3)" class="btn btn-default" ng-class="selectedButtonClass(3)">Gen III</button>
-        <button ng-click="switchGen(4)" class="btn btn-default" ng-class="selectedButtonClass(4)">Gen IV</button>
-        <button ng-click="switchGen(5)" class="btn btn-default" ng-class="selectedButtonClass(5)">Gen V</button>
-        <button ng-click="switchGen(6)" class="btn btn-default" ng-class="selectedButtonClass(6)">Gen VI</button><br />
+      <button id="submit-button" class="btn btn-success" ng-click="validateAnswer(false)" ng-show="correct">Submit</button>
+      <button id="give-up-button" class="btn btn-danger" ng-click="validateAnswer(true)" ng-show="correct">Give up</button>
+      <button id="try-again-button" class="btn btn-primary" ng-click="reset()" ng-show="!correct">Try again!</button>
     </div>
-    <div>
-        <h1 id="answer" ng-hide="correct">{{correctAnswer}}</h1>
-        <div class="img-container">
-            <img ng-src="{{currentPokemon.imgUrl}}" id="question" />
-        </div><br />
-        <input type="text" value="" id="nameAnswer" ng-model="inputAnswer" ng-keyup="$event.keyCode == 13 ? inputEnter(false) : null" ng-class="getInputClass()"/><br />
-        <div id="status" ng-class = "getStatusClass()">{{getStatus()}}</div>
-        <div class="button-toolbar">
-            <button id="submit-button" class="btn btn-success" ng-click="validateAnswer(false)" ng-show="correct">Submit</button>
-            <button id="give-up-button" class="btn btn-danger" ng-click="validateAnswer(true)" ng-show="correct">Give up</button>
-            <button id="try-again-button" class="btn btn-primary" ng-click="reset()" ng-show="!correct">Try again!</button>
-        </div>
-        <!--<input type="text" value="Enter type here." />-->
-    </div>
+    <!--<input type="text" value="Enter type here." />-->
+  </div>
 
 </div>
