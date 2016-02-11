@@ -20,7 +20,7 @@ Dev-Ops
 
 ##3. Dependencies and Prerequisite software
 
- 1. NodeJS (I'm using v0.12.7)
+ 1. NodeJS 4.3.x
  2. NPM configured and running
  3. Perhaps XCode and command line tools if on Mac OS X
  4. *Google Chrome* (Optional: this is what Grunt will launch automatically when serving)
