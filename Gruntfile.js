@@ -2,8 +2,11 @@
 module.exports = function(grunt) {
   'use strict';
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
+  var watchFiles = ['public/**/*', 'server.js'];
+  var ignoreFiles = ['bower_components', 'node_modules'];
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-nodemon');
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -19,7 +22,18 @@ module.exports = function(grunt) {
           }
         }
       }
+    },
+    nodemon: {
+      default: {
+        script: 'server.js',
+        options: {
+          nodeArgs: ['--debug'],
+          watch: watchFiles,
+          ignore: ignoreFiles
+        }
+      }
     }
   });
   grunt.registerTask('server', ['connect:server:keepalive']);
+  grunt.registerTask('default', 'nodemon');
 };

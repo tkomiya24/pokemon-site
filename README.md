@@ -12,7 +12,8 @@ Application:
   * Bootstrap
   * jQuery
 
-Dev-Ops
+Development
+  * Nodemon
   * Bower
   * Grunt
   * JSCS for Javascript code stye checking
