@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   'use strict';
 
   var watchFiles = ['public/**/*', 'server.js'];
+  var watchFilesJs = ['public/**/*.js', 'server.js'];
   var ignoreFiles = ['bower_components', 'node_modules'];
 
   require('load-grunt-tasks')(grunt);
@@ -30,6 +31,14 @@ module.exports = function(grunt) {
           watch: watchFiles,
           ignore: ignoreFiles
         }
+      }
+    },
+    jshint: {
+      default: {
+        src: watchFilesJs
+      },
+      options: {
+        jshintrc: '.jshintrc'
       }
     }
   });
