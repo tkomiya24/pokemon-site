@@ -5,8 +5,7 @@ module.exports = function(grunt) {
   var watchFiles = ['public/**/*', 'server.js'];
   var ignoreFiles = ['bower_components', 'node_modules'];
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-nodemon');
+  require('load-grunt-tasks')(grunt);
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
