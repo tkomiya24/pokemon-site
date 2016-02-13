@@ -38,10 +38,12 @@ module.exports = function(grunt) {
         src: watchFilesJs
       },
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        force: true
       }
     }
   });
   grunt.registerTask('server', ['connect:server:keepalive']);
   grunt.registerTask('default', 'nodemon');
+  grunt.registerTask('precommit', ['jshint']);
 };
