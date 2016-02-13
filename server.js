@@ -2,7 +2,7 @@
 
 var express = require('express');
 var app = express();
-var mongoose = require('mongoose');
+var db = require('./db/connect');
 
 function configureExpressApp() {
   app.set('port', (process.env.PORT || 5000));
@@ -16,11 +16,5 @@ function startExpressApp() {
   });
 }
 
-function connectToDatabase(callback) {
-  mongoose.connect('mongodb://localhost/pokemon-site');
-  mongoose.connection.on('error', console.error.bind(console, 'connection error: '));
-  mongoose.connection.once('open', callback);
-}
-
 configureExpressApp();
-connectToDatabase(startExpressApp);
+db.connectToDatabase(startExpressApp);
