@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   'use strict';
 
   var watchFiles = ['public/**/*', 'server.js'];
-  var watchFilesJs = ['public/**/*.js', 'server.js'];
+  var watchFilesJs = ['public/**/*.js', 'server.js', 'db/*.js'];
   var ignoreFiles = ['bower_components', 'node_modules'];
 
   require('load-grunt-tasks')(grunt);
