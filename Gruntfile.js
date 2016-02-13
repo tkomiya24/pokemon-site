@@ -41,6 +41,15 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc',
         force: true
       }
+    },
+    jscs: {
+      default: {
+        src: watchFilesJs
+      },
+      options: {
+        config: '.jscsrc',
+        verbose: true
+      }
     }
   });
   grunt.registerTask('server', ['connect:server:keepalive']);
