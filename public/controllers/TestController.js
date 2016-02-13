@@ -6,6 +6,43 @@ angular.module('pokeApp').controller('testController', function($scope) {
   var alreadyAsked = [];
   var pkmGenerator = new Generator();
 
+  function getNextPokemon(gen) {
+    var pok;
+    do {
+      pok = pkmGenerator.getRandomPokemon(gen);
+    } while (alreadyAsked[pok.name] === true);
+    return pok;
+  }
+
+  function animateStatus() {
+    var status = $('#status');
+    status.animate({
+      fontSize: '2.5em',
+      opacity: '0.5'
+    }, 'medium');
+    status.animate({
+      fontSize: '1.9em',
+      opacity: '1'
+    }, 'medium');
+  }
+
+  function animateStreakDiv() {
+    var div = $('#streakTracker');
+    div.animate({
+      fontSize: '4em',
+      opacity: '0.3'
+    }, 'medium');
+    div.animate({
+      fontSize: '3em',
+      opacity: '1'
+    }, 'medium');
+  }
+
+  function resetScore() {
+    $scope.streak = 0;
+    animateStreakDiv();
+  }
+
   //scope variables.
   $scope.inputAnswer = '';
   $scope.streak = 0;
@@ -75,42 +112,4 @@ angular.module('pokeApp').controller('testController', function($scope) {
   $scope.getStatusClass = function() {
     return $scope.correct ? 'status-correct' : 'status-incorrect';
   };
-
-  function getNextPokemon(gen) {
-    var pok;
-    do {
-      pok = pkmGenerator.getRandomPokemon(gen);
-    } while (alreadyAsked[pok.name] === true);
-    return pok;
-  }
-
-  function animateStatus() {
-    var status = $('#status');
-    status.animate({
-      fontSize: '2.5em',
-      opacity: '0.5'
-    }, 'medium');
-    status.animate({
-      fontSize: '1.9em',
-      opacity: '1'
-    }, 'medium');
-  }
-
-  function animateStreakDiv() {
-    var div = $('#streakTracker');
-    div.animate({
-      fontSize: '4em',
-      opacity: '0.3'
-    }, 'medium');
-    div.animate({
-      fontSize: '3em',
-      opacity: '1'
-    }, 'medium');
-  }
-
-  function resetScore() {
-    $scope.streak = 0;
-    animateStreakDiv();
-  }
-
 });

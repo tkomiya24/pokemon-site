@@ -3,10 +3,10 @@ module.exports = function(grunt) {
   'use strict';
 
   var watchFiles = ['public/**/*', 'server.js'];
+  var watchFilesJs = ['public/**/*.js', 'server.js'];
   var ignoreFiles = ['bower_components', 'node_modules'];
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-nodemon');
+  require('load-grunt-tasks')(grunt);
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -32,8 +32,27 @@ module.exports = function(grunt) {
           ignore: ignoreFiles
         }
       }
+    },
+    jshint: {
+      default: {
+        src: watchFilesJs
+      },
+      options: {
+        jshintrc: '.jshintrc',
+        force: true
+      }
+    },
+    jscs: {
+      default: {
+        src: watchFilesJs
+      },
+      options: {
+        config: '.jscsrc',
+        verbose: true
+      }
     }
   });
   grunt.registerTask('server', ['connect:server:keepalive']);
   grunt.registerTask('default', 'nodemon');
+  grunt.registerTask('precommit', ['jshint', 'jscs']);
 };
