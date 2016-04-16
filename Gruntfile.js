@@ -2,8 +2,9 @@
 module.exports = function(grunt) {
   'use strict';
 
-  var watchFiles = ['public/**/*', 'server.js'];
+  var watchFiles = ['public/**/*', 'server.js', 'Gruntfile.js'];
   var watchFilesJs = ['public/**/*.js', 'server.js', 'db/*.js'];
+  var serverFilesJs = ['app/**/*.js', 'config/*.js'];
   var ignoreFiles = ['bower_components', 'node_modules'];
 
   require('load-grunt-tasks')(grunt);
@@ -28,14 +29,14 @@ module.exports = function(grunt) {
         script: 'server.js',
         options: {
           nodeArgs: ['--debug'],
-          watch: watchFiles,
+          watch: watchFiles.concat(serverFilesJs),
           ignore: ignoreFiles
         }
       }
     },
     jshint: {
       default: {
-        src: watchFilesJs
+        src: watchFilesJs.concat(serverFilesJs)
       },
       options: {
         jshintrc: '.jshintrc',
@@ -44,7 +45,7 @@ module.exports = function(grunt) {
     },
     jscs: {
       default: {
-        src: watchFilesJs
+        src: watchFilesJs.concat(serverFilesJs)
       },
       options: {
         config: '.jscsrc',
