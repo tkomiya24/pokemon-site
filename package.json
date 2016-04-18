@@ -33,9 +33,14 @@
     "pre-commit": "^1.1.2"
   },
   "dependencies": {
+    "body-parser": "^1.15.0",
     "bower": "^1.6.5",
+    "cookie-parser": "^1.4.1",
     "express": "^4.13.3",
-    "mongoose": "^4.4.3"
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "engines": {
     "node": "4.3.2"
