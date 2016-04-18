@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 module.exports.connectToDatabase = function(callback) {
   if (process.env.MONGODB_URI) {
