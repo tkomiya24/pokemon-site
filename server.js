@@ -6,6 +6,7 @@ var db = require('./db/connect');
 var router = require('./config/routes');
 var passport = require('passport');
 var authentication = require('./config/authentication');
+var bodyParser = require('body-parser');
 
 function configureExpressApp() {
   authentication.configure();
@@ -13,6 +14,10 @@ function configureExpressApp() {
   app.use(express.static(__dirname + '/public'));
   app.use('/bower_components', express.static(__dirname + '/bower_components'));
   app.use(require('cookie-parser')());
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+  app.use(bodyParser.json());
   app.use(require('express-session')({
     secret: 'keyboard cat',
     resave: false,
