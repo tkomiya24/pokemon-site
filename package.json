@@ -35,7 +35,8 @@
   "dependencies": {
     "bower": "^1.6.5",
     "express": "^4.13.3",
-    "mongoose": "^4.4.3"
+    "mongoose": "^4.4.3",
+    "passport": "^0.3.2"
   },
   "engines": {
     "node": "4.3.2"
