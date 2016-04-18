@@ -2,7 +2,23 @@
 var User = require('../models/user');
 
 module.exports.createOne = function(req, res, next) {
-  res.send('Created a user!');
+  var user = new User(req.body);
+  user.
+    save().
+    then(function(user) {
+      req.logIn(user, function(err) {
+        if (err) {
+          res.status(400).send(err);
+        } else {
+          user.salt = undefined;
+          user.password = undefined;
+          res.jsonp(user);
+        }
+      });
+    }).
+    catch(function(err) {
+      res.status(400).send(err);
+    });
 };
 
 module.exports.getAuthenticatedUser = function(req, res, next) {
