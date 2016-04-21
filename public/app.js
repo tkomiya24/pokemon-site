@@ -10,6 +10,6 @@ pokeApp.config(function($routeProvider) {
       templateUrl: 'views/partials/learn.html',
     }).
     otherwise({
-      redirectTo: '/learn'
+      redirectTo: '/test'
     });
 });
