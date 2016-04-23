@@ -1,4 +1,4 @@
-var pokeApp = angular.module('pokeApp', ['ngRoute', 'ngAnimate']);
+var pokeApp = angular.module('pokeApp', ['ngRoute', 'ngAnimate', 'ngResource']);
 
 pokeApp.config(function($routeProvider) {
   'use strict';
