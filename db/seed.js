@@ -28,6 +28,7 @@ for (var i = 0; i < pokemonNames.length; i++) {
   pokemon.name = pokemonNames[i];
   pokemon._id = i + 1;
   pokemon.generation = getGeneration(i + 1);
+  pokemon.imgUrl = 'img/' + i + '.jpg';
   pokemonObjects.push(pokemon);
 }
 
