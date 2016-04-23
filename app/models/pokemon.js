@@ -15,6 +15,10 @@ var pokemonSchema = mongoose.Schema({
     required: true,
     index: true,
     unique: true
+  },
+  generation: {
+    type: Number,
+    required: true
   }
 });
 mongoose.model('Pokemon', pokemonSchema);
