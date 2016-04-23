@@ -39,8 +39,7 @@ module.exports = function(grunt) {
         src: watchFilesJs.concat(serverFilesJs)
       },
       options: {
-        jshintrc: '.jshintrc',
-        force: true
+        jshintrc: '.jshintrc'
       }
     },
     jscs: {
