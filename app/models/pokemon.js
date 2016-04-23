@@ -15,6 +15,13 @@ var pokemonSchema = mongoose.Schema({
     required: true,
     index: true,
     unique: true
+  },
+  generation: {
+    type: Number,
+    required: true
+  },
+  imgUrl: {
+    type: String
   }
 });
 mongoose.model('Pokemon', pokemonSchema);
