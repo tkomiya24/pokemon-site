@@ -11,6 +11,27 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    watch: {
+      serverJS: {
+        files: serverJs,
+        options: {
+          livereload: true
+        }
+      },
+      clientJS: {
+        files: publicJs,
+        options: {
+          livereload: true
+        }
+      }
+    },
+    concurrent: {
+      default: ['nodemon', 'watch'],
+      options: {
+        logConcurrentOutput: true,
+        limit: 10
+      }
+    },
     connect: {
       server: {
         options: {
@@ -53,6 +74,6 @@ module.exports = function(grunt) {
     }
   });
   grunt.registerTask('server', ['connect:server:keepalive']);
-  grunt.registerTask('default', 'nodemon');
+  grunt.registerTask('default', 'concurrent:default');
   grunt.registerTask('precommit', ['jshint', 'jscs']);
 };
