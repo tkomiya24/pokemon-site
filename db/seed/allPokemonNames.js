@@ -667,7 +667,7 @@ module.exports = [
    'Vivillon',
    'Litleo',
    'Pyroar',
-   'Flab&eacute;b&eacute;',
+   'Flabébé',
    'Floette',
    'Florges',
    'Skiddo',
