@@ -48,33 +48,9 @@ angular.module('pokeApp').controller('testController', ['$scope', 'Pokemon',
       }
     }
 
-    function animateStatus() {
-      var status = $('#status');
-      status.animate({
-        fontSize: '2.5em',
-        opacity: '0.5'
-      }, 'medium');
-      status.animate({
-        fontSize: '1.9em',
-        opacity: '1'
-      }, 'medium');
-    }
-
-    function animateStreakDiv() {
-      var div = $('#streakTracker');
-      div.animate({
-        fontSize: '4em',
-        opacity: '0.3'
-      }, 'medium');
-      div.animate({
-        fontSize: '3em',
-        opacity: '1'
-      }, 'medium');
-    }
-
     function resetScore() {
       $scope.streak = 0;
-      animateStreakDiv();
+      // animateStreakDiv();
     }
 
     //scope methods
@@ -83,14 +59,14 @@ angular.module('pokeApp').controller('testController', ['$scope', 'Pokemon',
         $scope.currentPokemon.name.toLowerCase() ===
         $scope.inputAnswer.toLowerCase()) {
         $scope.streak++;
-        animateStreakDiv();
-        animateStatus();
+        // animateStreakDiv();
+        // animateStatus();
         $scope.currentPokemon = getNextPokemon();
         $scope.inputAnswer = '';
       } else {
         $scope.correctAnswer = $scope.currentPokemon.name;
         $scope.correct = false;
-        animateStatus();
+        // animateStatus();
         // input.animate({ fontSize: '1.5em', opacity: '0.3' }, 'medium');
         // input.animate({ fontSize: '1em', opacity: '1' }, 'medium');
       }
