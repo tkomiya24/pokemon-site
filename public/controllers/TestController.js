@@ -83,7 +83,7 @@ angular.module('pokeApp').controller('testController', ['$scope', 'Pokemon',
 
     $scope.switchGen = function(i) {
       gen = i;
-      pokemon = getPokemon(i);
+      getPokemon(i);
       $scope.reset();
     };
 
