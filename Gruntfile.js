@@ -1,9 +1,9 @@
 /*global module,require */
 module.exports = function(grunt) {
   'use strict';
-
+  var scripts = require('./config/scripts');
   var watchFiles = ['public/**/*',];
-  var publicJs = ['public/**/*.js'];
+  var publicJs = scripts.publicJs;
   var serverJs = ['app/**/*.js', 'config/*.js', 'server.js', 'db/*.js', 'Gruntfile.js'];
   var ignoreFiles = ['bower_components', 'node_modules'];
   var htmlFiles = ['public/**/*.html'];
