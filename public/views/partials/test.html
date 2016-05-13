@@ -1,10 +1,4 @@
 <div id="main" class="container" ng-controller="testController">
-  <h3>Do you know these pokemon?</h3>
-
-  <div id="streakTracker">
-    {{streak}}
-  </div>
-
   <div class="button-toolbar">
     <label>Limit to: </label>
     <br />
@@ -17,7 +11,10 @@
     <button ng-click="switchGen(6)" class="btn btn-default" ng-class="selectedButtonClass(6)">Gen VI</button>
     <br />
   </div>
-  <div>
+  <div ng-hide="finished">
+    <div id="streakTracker">
+      {{streak}}
+    </div>
     <h1 id="answer" ng-hide="correct">{{correctAnswer}}</h1>
     <div class="img-container">
       <img ng-src="{{currentPokemon.imgUrl}}" id="question" />
@@ -33,5 +30,13 @@
     </div>
     <!--<input type="text" value="Enter type here." />-->
   </div>
-
+  <div ng-show="finished">
+    <h1>Congratulations!!</h1>
+    <div>
+      <p>
+        You got all {{streak}} correct!
+      </p>
+      <button ng-click="reset()">Play again</button>
+    </div>
+  </div>
 </div>
