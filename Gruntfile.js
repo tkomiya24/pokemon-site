@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   var publicJs = ['public/**/*.js'];
   var serverJs = ['app/**/*.js', 'config/*.js', 'server.js', 'db/*.js', 'Gruntfile.js'];
   var ignoreFiles = ['bower_components', 'node_modules'];
+  var htmlFiles = ['public/**/*.html'];
 
   require('load-grunt-tasks')(grunt);
   // Project configuration.
@@ -20,6 +21,12 @@ module.exports = function(grunt) {
       },
       clientJS: {
         files: publicJs,
+        options: {
+          livereload: true
+        }
+      },
+      html: {
+        files: htmlFiles,
         options: {
           livereload: true
         }
