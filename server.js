@@ -7,10 +7,13 @@ var router = require('./config/routes');
 var passport = require('passport');
 var authentication = require('./config/authentication');
 var bodyParser = require('body-parser');
+var consolidate = require('consolidate');
 
 function configureExpressApp() {
   authentication.configure();
   app.set('port', (process.env.PORT || 5000));
+  app.set('view engine', 'ejs');
+  app.set('views', './app');
   app.use(express.static(__dirname + '/public'));
   app.use('/bower_components', express.static(__dirname + '/bower_components'));
   app.use(require('cookie-parser')());
