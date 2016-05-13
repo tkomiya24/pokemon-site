@@ -7,7 +7,7 @@ var scripts = require('./scripts');
 
 router.route('/')
   .get(function(req, res, next) {
-    res.render('index', {scripts: scripts.publicJs});
+    res.render('index', {scripts: scripts.clientJs});
   });
 
 router.route('/users')
