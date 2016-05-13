@@ -75,6 +75,7 @@ angular.module('pokeApp').controller('testController', ['$scope', 'Pokemon',
     $scope.reset = function() {
       $scope.correct = true;
       $scope.inputAnswer = '';
+      $scope.finished = false;
       index = 0;
       shuffle(pokemon);
       resetScore();
