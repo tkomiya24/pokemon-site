@@ -7,7 +7,6 @@ var router = require('./config/routes');
 var passport = require('passport');
 var authentication = require('./config/authentication');
 var bodyParser = require('body-parser');
-var consolidate = require('consolidate');
 
 function configureExpressApp() {
   authentication.configure();
