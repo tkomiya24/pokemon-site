@@ -6,6 +6,9 @@ pokeApp.config(function($routeProvider) {
     when('/test', {
       templateUrl: 'views/partials/test.html',
     }).
+    when('/users/new', {
+      templateUrl: 'views/users/_new.html'
+    }).
     otherwise({
       redirectTo: '/test'
     });
